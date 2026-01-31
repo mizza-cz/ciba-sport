@@ -1,0 +1,20 @@
+{% extends "@components/base/base.twig" %} {% set title = "02.0_article" %} {%
+block main %} {% include "@components/article-section/article-section.twig" %}
+
+<section class="mb-lg-16 mb-8">
+  <div class="container">
+    <h3 class="h3 text-primary mb-6">Další články</h3>
+
+    <div class="swiper posts">
+      <ul role="list" class="swiper-wrapper infinite-scroll-swiper">
+        {% for i in 1..6 %}
+        <li class="swiper-slide">
+          {% include "@components/postCard/postCard.twig" %}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
