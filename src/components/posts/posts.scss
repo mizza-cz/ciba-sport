@@ -1,0 +1,30 @@
+.posts {
+  position: relative;
+  overflow: visible;
+
+  .swiper-slide {
+    width: 400px !important;
+    @include media-breakpoint-down(sm) {
+      width: 100% !important;
+    }
+  }
+}
+
+.infinite-scroll-swiper {
+  -webkit-transition-timing-function: linear !important;
+  -o-transition-timing-function: linear !important;
+  transition-timing-function: linear !important;
+}
+.swiper-wrapper {
+  transition-timing-function: linear !important;
+}
+
+.posts-section {
+  background: linear-gradient(
+    180deg,
+    #7f1f21 0,
+    #44191a calc(50% + 60px),
+    #ffffff calc(50% + 60px),
+    #ffffff 100%
+  );
+}

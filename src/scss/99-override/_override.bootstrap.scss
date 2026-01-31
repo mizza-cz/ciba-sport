@@ -1,0 +1,42 @@
+/*! purgecss start ignore */
+.container {
+  margin: 0 auto;
+  padding: 0 20px !important;
+  width: 100% !important;
+  max-width: 95.4rem !important;
+}
+.text-shadow {
+  text-shadow: 0px 0px 10px #0000000a !important;
+}
+.text-white {
+  color: var(--color-light) !important;
+}
+.text-primary {
+  color: var(--text-primary) !important;
+}
+.text-white-76 {
+  color: var(--color-white-76);
+}
+.bg-white {
+  background: var(--color-light) !important;
+}
+.bg-primary {
+  background: linear-gradient(
+    180deg,
+    #1f0b0c 0%,
+    #3a1214 35%,
+    #5a1a1c 65%,
+    #7f1f21 100%
+  );
+}
+.z-5 {
+  z-index: 5;
+}
+.hover-outline,
+.hover-outline a {
+  text-decoration-color: transparent;
+  &:hover {
+    text-decoration-color: inherit;
+  }
+}
+/*! purgecss end ignore */

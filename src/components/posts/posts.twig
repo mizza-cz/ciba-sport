@@ -1,0 +1,22 @@
+<section class="mb-lg-16 mb-8 posts-section">
+  <div class="container">
+    <div
+      class="d-flex mb-6 justify-content-between align-items-center flex-wrap gap-4"
+    >
+      <h3 class="h3 text-white">Novinky</h3>
+      <a href="#" class="btn-primary"
+        >Všechny novinky {% include "@images/arrow-right.svg" %}</a
+      >
+    </div>
+
+    <div class="swiper posts">
+      <ul role="list" class="swiper-wrapper infinite-scroll-swiper">
+        {% for i in 1..6 %}
+        <li class="swiper-slide">
+          {% include "@components/postCard/postCard.twig" %}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>

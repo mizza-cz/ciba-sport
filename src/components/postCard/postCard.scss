@@ -1,0 +1,51 @@
+.postCard {
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  display: block;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s;
+  }
+  &:hover {
+    img {
+      transform: scale(1.05);
+    }
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    background: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+  &__content {
+    position: absolute;
+    color: var(--color-text-inverse);
+    bottom: 24px;
+    padding: 0 24px;
+    z-index: 2;
+    display: grid;
+    gap: 16px;
+    @include media-breakpoint-down(lg) {
+      bottom: 20px;
+    }
+    @include media-breakpoint-down(md) {
+      padding: 0 20px;
+    }
+    p {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
+}
+ 
+ 
+ 
