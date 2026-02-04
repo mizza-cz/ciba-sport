@@ -1,0 +1,28 @@
+.alert {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 140%;
+  letter-spacing: -0.01em;
+}
+.alert.alert-success {
+  color: #0f5132;
+  background-color: #d1e7dd;
+  border-color: #badbcc;
+  text-align: center;
+  position: relative;
+  margin-bottom: 24px;
+
+  .close {
+    position: absolute;
+    right: 8px;
+    cursor: pointer;
+    background: transparent;
+    color: var(--color-text-primary);
+    border: none;
+    font-size: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

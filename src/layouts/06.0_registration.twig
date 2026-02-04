@@ -1,0 +1,217 @@
+{% extends "@components/base/base.twig" %} {% set title = "06.0_registration" %}
+{% block main %}
+
+<section class="pb-lg-14 pb-8 section pt-lg-20 pt-10">
+  <div class="container-sm">
+    <h1 class="h2 text-center text-primary mb-lg-10 mb-6">Registrace</h1>
+
+    <div class="alert alert-success">
+      <button data-dismiss="alert" class="close">×</button>
+      <strong>Ok:</strong>
+      Děkujeme za registraci.
+    </div>
+    <div class="form-shell">
+      <form class="bg-white" action="/registrace" method="post">
+        <div class="text-medium-sm mb-2 fw-bold">Zákoný zástupce</div>
+        <div class="row gx-2 gy-6 mb-8">
+          <div class="col-12">
+            <input
+              type="text"
+              name="firstName"
+              placeholder="Jméno"
+              class="pill-control"
+              id="frm-eventRegistration-form-firstName"
+              required
+              data-nette-rules='[{"op":":filled","msg":"This field is required."}]'
+            />
+          </div>
+          <col-12>
+            <input
+              type="text"
+              name="lastName"
+              placeholder="Příjmení"
+              class="pill-control"
+              id="frm-eventRegistration-form-lastName"
+              required
+              data-nette-rules='[{"op":":filled","msg":"This field is required."}]'
+            />
+          </col-12>
+          <div class="col-12">
+            <input
+              type="text"
+              name="street"
+              placeholder="Ulice a číslo domu"
+              class="pill-control"
+              id="frm-eventRegistration-form-street"
+              required
+              data-nette-rules='[{"op":":filled","msg":"This field is required."}]'
+            />
+          </div>
+          <div class="col-12">
+            <input
+              type="text"
+              name="city"
+              placeholder="Město"
+              class="pill-control"
+              id="frm-eventRegistration-form-city"
+              required
+              data-nette-rules='[{"op":":filled","msg":"This field is required."}]'
+            />
+          </div>
+          <div class="col-12">
+            <input
+              type="text"
+              name="postCode"
+              placeholder="PSČ"
+              class="pill-control"
+              id="frm-eventRegistration-form-postCode"
+              required
+              data-nette-rules='[{"op":":filled","msg":"This field is required."}]'
+            />
+          </div>
+          <div class="col-12">
+            <input
+              type="text"
+              name="email"
+              placeholder="E-mail"
+              class="pill-control"
+              id="frm-eventRegistration-form-email"
+              data-nette-rules='[{"op":":filled","rules":[{"op":":email","msg":"Zadejte platný e-mail"}],"control":"email"}]'
+            />
+          </div>
+          <div class="col-12">
+            <input
+              type="text"
+              name="phone"
+              placeholder="Telefon"
+              class="pill-control"
+              id="frm-eventRegistration-form-phone"
+              data-nette-rules='[{"op":":filled","rules":[{"op":":pattern","msg":"Zadejte platné telefonní číslo","arg":"^[0-9+\\s()\\-]+$"}],"control":"phone"}]'
+            />
+          </div>
+          <div class="col-12">
+            <select
+              name="event"
+              class="js-select"
+              id="frm-eventRegistration-form-event"
+            >
+              <option value="">-Vyberte akci-</option>
+              <option value="1">
+                1. turnus - 13.7. - 17.7.2026 - Brno-Líšeň
+              </option>
+              <option value="2">
+                2. turnus - 20.7. - 24.7.2026 - Brno-Líšeň
+              </option>
+              <option value="3">
+                3. turnus - 27.7. - 31.7.2026 - Brno-Bystrc
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="text-medium-sm mb-2 fw-bold">Účastníci akce</div>
+        <div class="row gx-2 gy-6">
+          <div class="col-12">
+            <input
+              type="text"
+              name="participants[1][firstNameParticipant]"
+              placeholder="Jméno 1. dítěte"
+              class="pill-control"
+              id="frm-eventRegistration-form-participants-1-firstNameParticipant"
+            />
+          </div>
+          <div class="col-12">
+            <input
+              type="text"
+              name="participants[1][lastNameParticipant]"
+              placeholder="Příjmení"
+              class="pill-control"
+              id="frm-eventRegistration-form-participants-1-lastNameParticipant"
+              data-nette-rules='[{"op":":filled","rules":[{"op":":filled","msg":"Zadejte příjmení"}],"control":"participants[1][firstNameParticipant]"}]'
+            />
+          </div>
+          <div class="col-12">
+            <input
+              type="text"
+              name="participants[1][dateOfBirth]"
+              placeholder="Datum narození (dd.mm.rrrr)"
+              class="pill-control"
+              style="margin-bottom: 20px"
+              id="frm-eventRegistration-form-participants-1-dateOfBirth"
+              data-nette-rules='[{"op":":filled","rules":[{"op":":filled","msg":"Zadejte datum narození"}],"control":"participants[1][firstNameParticipant]"}]'
+            />
+          </div>
+          <div class="col-12">
+            <input
+              type="text"
+              name="participants[2][firstNameParticipant]"
+              placeholder="Jméno 2. dítěte"
+              class="pill-control"
+              id="frm-eventRegistration-form-participants-2-firstNameParticipant"
+            />
+          </div>
+          <div class="col-12">
+            <input
+              type="text"
+              name="participants[2][lastNameParticipant]"
+              placeholder="Příjmení"
+              class="pill-control"
+              id="frm-eventRegistration-form-participants-2-lastNameParticipant"
+              data-nette-rules='[{"op":":filled","rules":[{"op":":filled","msg":"Zadejte příjmení"}],"control":"participants[2][firstNameParticipant]"}]'
+            />
+          </div>
+          <div class="col-12">
+            <input
+              type="text"
+              name="participants[2][dateOfBirth]"
+              placeholder="Datum narození (dd.mm.rrrr)"
+              class="pill-control"
+              style="margin-bottom: 20px"
+              id="frm-eventRegistration-form-participants-2-dateOfBirth"
+              data-nette-rules='[{"op":":filled","rules":[{"op":":filled","msg":"Zadejte datum narození"}],"control":"participants[2][firstNameParticipant]"}]'
+            />
+          </div>
+          <div class="col-12">
+            <input
+              type="text"
+              name="participants[3][firstNameParticipant]"
+              placeholder="Jméno 3. dítěte"
+              class="pill-control"
+              id="frm-eventRegistration-form-participants-3-firstNameParticipant"
+            />
+          </div>
+          <div class="col-12">
+            <input
+              type="text"
+              name="participants[3][lastNameParticipant]"
+              placeholder="Příjmení"
+              class="pill-control form-control text"
+              id="frm-eventRegistration-form-participants-3-lastNameParticipant"
+              data-nette-rules='[{"op":":filled","rules":[{"op":":filled","msg":"Zadejte příjmení"}],"control":"participants[3][firstNameParticipant]"}]'
+            />
+          </div>
+          <div class="col-12">
+            <input
+              type="text"
+              name="participants[3][dateOfBirth]"
+              placeholder="Datum narození (dd.mm.rrrr)"
+              class="pill-control form-control text"
+              style="margin-bottom: 20px"
+              id="frm-eventRegistration-form-participants-3-dateOfBirth"
+              data-nette-rules='[{"op":":filled","rules":[{"op":":filled","msg":"Zadejte datum narození"}],"control":"participants[3][firstNameParticipant]"}]'
+            />
+          </div>
+          <div class="col-12">
+            <input
+              type="submit"
+              name="save"
+              class="send-btn w-100"
+              value="Registrovat"
+            />
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
